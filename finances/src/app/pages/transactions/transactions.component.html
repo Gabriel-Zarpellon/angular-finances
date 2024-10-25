@@ -1,0 +1,28 @@
+<main>
+  <div>
+    <a routerLink="/">back</a>
+    <h1>Cadastre a transação</h1>
+    <app-transaction-form />
+  </div>
+  <section>
+    <div>
+      <h2>Total</h2>
+      <p>
+        {{
+          totalAmount.toLocaleString("pt-BR", { style: "currency", currency: "BRL" })
+        }}
+      </p>
+    </div>
+  </section>
+  <section>
+    <ul *ngIf="transactionList.length > 0">
+      <app-transaction-card
+        *ngFor="let transaction of transactionList"
+        [transaction]="transaction"
+      />
+    </ul>
+    <div *ngIf="transactionList.length == 0">
+      <p>Nenhuma transação cadastrada.</p>
+    </div>
+  </section>
+</main>
