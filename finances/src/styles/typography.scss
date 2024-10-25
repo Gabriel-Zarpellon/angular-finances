@@ -1,0 +1,38 @@
+.title {
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--black-text-color);
+}
+
+.title.one {
+  font-size: 2rem;
+}
+
+.title.two {
+  font-size: 1.75rem;
+}
+
+.money {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.money.blue {
+  color: var(--blue-text-color);
+}
+
+.money.red {
+  color: var(--red-text-color);
+}
+
+.paragraph {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--black-text-color);
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--black-text-color);
+}

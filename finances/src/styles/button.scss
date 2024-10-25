@@ -1,0 +1,28 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white-text-color);
+
+  background-color: var(--blue-button-color);
+
+  text-align: center;
+
+  transition: 0.4s;
+
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  padding: 0 clamp(20px, 2vw, 30px);
+  height: 4.8125rem;
+}
+
+.btn.sm {
+  padding: 0 20px;
+  height: 3.625rem;
+}
