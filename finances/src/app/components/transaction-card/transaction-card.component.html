@@ -1,0 +1,27 @@
+<li>
+  <div>
+    <h3 *ngIf="transaction.type == 'deposit'">
+      {{
+        transaction.amount.toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL"
+        })
+      }}
+    </h3>
+    <h3 *ngIf="transaction.type == 'withdraw'">
+      {{
+        "-" +
+          transaction.amount.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+          })
+      }}
+    </h3>
+    <p>{{ transaction.description }}</p>
+  </div>
+  <div>
+    <p *ngIf="transaction.type == 'deposit'">Entrada</p>
+    <p *ngIf="transaction.type == 'withdraw'">Saída</p>
+    <button (click)="handleClick()">X</button>
+  </div>
+</li>
