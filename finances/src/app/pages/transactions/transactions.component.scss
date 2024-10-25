@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 26px;
+}
+
+.total {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box {
+  & > div:first-child {
+    display: flex;
+    justify-content: flex-end;
+    color: var(--blue-button-color);
+
+    a:visited {
+      color: inherit;
+    }
+  }
+}

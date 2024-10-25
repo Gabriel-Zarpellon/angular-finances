@@ -1,30 +1,35 @@
 <form (submit)="formSubmit($event)">
-  <div>
-    <div>
-      <label for="amount">Valor</label>
-      <input
-        type="number"
-        name="amount"
-        placeholder="R$"
-        [formControl]="amount"
+  <div class="form-container">
+    <div class="upper-form">
+      <div>
+        <label class="label" for="amount">Valor</label>
+        <input
+          type="number"
+          name="amount"
+          placeholder="R$"
+          [formControl]="amount"
+          required
+        />
+      </div>
+      <div>
+        <label class="label" for="type">Tipo</label>
+        <select name="type" [formControl]="type" required>
+          <option value="deposit">Entrada</option>
+          <option value="withdraw">Saída</option>
+        </select>
+      </div>
+    </div>
+    <div class="lower-form">
+      <label class="label" for="description">Descrição</label>
+      <textarea
+        name="description"
+        placeholder="Descrição"
+        [formControl]="description"
         required
-      />
+      ></textarea>
     </div>
-    <div>
-      <label for="type">Tipo</label>
-      <select name="type" [formControl]="type" required>
-        <option value="deposit">Entrada</option>
-        <option value="withdraw">Saída</option>
-      </select>
+    <div class="btn-box">
+      <button class="btn sm" type="submit">Cadastro</button>
     </div>
-    <label for="description">Descrição</label>
-    <textarea
-      name="description"
-      placeholder="Descrição"
-      [formControl]="description"
-      required
-    ></textarea>
-
-    <button type="submit">cadastro</button>
   </div>
 </form>

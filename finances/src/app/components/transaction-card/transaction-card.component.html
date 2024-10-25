@@ -1,6 +1,6 @@
-<li>
+<li class="box">
   <div>
-    <h3 *ngIf="transaction.type == 'deposit'">
+    <h3 *ngIf="transaction.type == 'deposit'" class="money blue">
       {{
         transaction.amount.toLocaleString("pt-BR", {
           style: "currency",
@@ -8,7 +8,7 @@
         })
       }}
     </h3>
-    <h3 *ngIf="transaction.type == 'withdraw'">
+    <h3 *ngIf="transaction.type == 'withdraw'" class="money red">
       {{
         "-" +
           transaction.amount.toLocaleString("pt-BR", {
@@ -17,11 +17,13 @@
           })
       }}
     </h3>
-    <p>{{ transaction.description }}</p>
+    <p class="paragraph">{{ transaction.description }}</p>
   </div>
   <div>
-    <p *ngIf="transaction.type == 'deposit'">Entrada</p>
-    <p *ngIf="transaction.type == 'withdraw'">Saída</p>
-    <button (click)="handleClick()">X</button>
+    <p *ngIf="transaction.type == 'deposit'" class="paragraph">Entrada</p>
+    <p *ngIf="transaction.type == 'withdraw'" class="paragraph">Saída</p>
+    <button (click)="handleClick()" class="material-symbols-outlined">
+      delete
+    </button>
   </div>
 </li>
