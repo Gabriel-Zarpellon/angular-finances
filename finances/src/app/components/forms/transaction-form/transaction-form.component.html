@@ -1,4 +1,4 @@
-<form (submit)="formSubmit($event)">
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
   <div class="form-container">
     <div class="upper-form">
       <div>
@@ -7,13 +7,13 @@
           type="number"
           name="amount"
           placeholder="R$"
-          [formControl]="amount"
+          formControlName="amount"
           required
         />
       </div>
       <div>
         <label class="label" for="type">Tipo</label>
-        <select name="type" [formControl]="type" required>
+        <select name="type" formControlName="type" value="deposit" required >
           <option value="deposit">Entrada</option>
           <option value="withdraw">Saída</option>
         </select>
@@ -24,7 +24,7 @@
       <textarea
         name="description"
         placeholder="Descrição"
-        [formControl]="description"
+        formControlName="description"
         required
       ></textarea>
     </div>
